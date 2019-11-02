@@ -31,7 +31,10 @@
   },
   "homepage": "https://github.com/ORESoftware/typescript-library-skeleton#readme",
   "dependencies": {
-    "node-tesseract-ocr": "^1.0.0"
+    "@types/pg": "^7.11.2",
+    "node-tesseract-ocr": "^1.0.0",
+    "pg": "^7.12.1",
+    "typeorm": "^0.2.20"
   },
   "devDependencies": {
     "@types/node": "^12.7.2",
