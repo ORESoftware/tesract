@@ -3,8 +3,9 @@ class Node {
   parent: Node;
   left: Node;
   right: Node;
+  value: number;
   
-  constructor(left?: Node, right?: Node) {
+  constructor(value: number, left?: Node, right?: Node) {
     this.left = left;
     this.right = right;
   }
@@ -27,18 +28,21 @@ class Node {
   
   swapWithParent() {
     
-    if (this.parent && this.parent.parent) {
-      this.parent = this.parent.parent;
+    const right = this.right;
+    const left = this.left;
+    
+    if (this.parent.left === this) {
+      this.right = this.parent.right;
+      this.left = this.parent;
+    }
+    else if (this.parent.right === this) {
+      this.left = this.parent.left;
+      this.right = this.parent;
     }
     
-    if (this.parent && this.parent.left === this) {
-      this.left = this.parent;
-      this.parent.left = this.left;
-    }
-    else if (this.parent && this.parent.right === this) {
-      this.right = this.parent;
-      this.parent.right = this.right;
-    }
+    this.parent.left = left;
+    this.parent.right = right;
+    this.parent = this.parent.parent;
     
   }
   
@@ -46,10 +50,18 @@ class Node {
 
 export class HeapQueue {
   
-  root = new Node();
+  root = new Node(1);
   
   peek() {
     return this.root;
+  }
+  
+  enq(n: Node) {
+  
+  }
+  
+  deq(n: Node) {
+  
   }
   
 }
