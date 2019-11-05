@@ -1,8 +1,14 @@
 'use strict';
 
 
+import * as assert from "assert";
+
 export const canGetZeroNonRecursive = (l: Array<number>) => {
 
+  if(l.length < 1){
+    return false;
+  }
+  
   const stk = [0], s = new Set();
   
   while(stk.length > 0){
@@ -39,6 +45,10 @@ export const canGetZeroNonRecursive = (l: Array<number>) => {
 
 export const canGetZero = (l: Array<number>, v: number, s: Set<number>) => {
   
+  if(l.length < 1){
+    return false;
+  }
+  
   if (s.has(v)) {
     return false;
   }
@@ -70,11 +80,17 @@ export const canGetZero = (l: Array<number>, v: number, s: Set<number>) => {
 };
 
 console.log(
-  canGetZero([1, 1, 1, 1, 0] , 0, new Set<number>())
+  canGetZero([1, 1, 1, 1, 1] , 0, new Set<number>())
 );
 
 console.log(
-  canGetZeroNonRecursive([1, 1, 1, 1, 0])
+  canGetZeroNonRecursive([1, 1, 1, 1, 1])
 );
 
+for(let i = 0; i < 1000; i++){
+  for(let x = 0; x < 30; x++){
+    const lst = new Array(x).fill(null).map(v => Math.floor(Math.random()*5));
+    assert(canGetZero(lst, 0, new Set()) === canGetZeroNonRecursive(lst));
+  }
+}
 
