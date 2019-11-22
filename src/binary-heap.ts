@@ -105,6 +105,11 @@ export class HeapQueue {
   
 }
 
+
+//  id =
+//  type tv or movie
+//
+
 const h = new HeapQueue();
 h.enq(new Node(2));
 h.enq(new Node(3));
