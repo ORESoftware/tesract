@@ -1,13 +1,15 @@
 class Node {
   nodes: Node[];
   val: number;
-  
+
   constructor(val: number, ...nodes: Node[]) {
     this.val = val;
     this.nodes = nodes;
   }
-  
+
 }
+
+
 
 const n = new Node(
   1,
@@ -36,22 +38,22 @@ const n = new Node(
 
 
 const run = () => {
-  
+
   const q = [n];
-  
+
   while(q.length > 0){
-  
+
     console.log('len:', q.length);
-    
+
     const v = q.pop();
-    
+
     console.log(v.val);
-    
+
     for(let n of v.nodes){
       q.unshift(n);
     }
   }
-  
+
 };
 
 run();
