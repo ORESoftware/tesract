@@ -1,16 +1,13 @@
 
+###  Lob.com
 
-## Tesract and TubiTV code challenge
+## install
+npm install && tsc
 
-For TubiTV see `src/tubi.ts` and run using:
+## run
 
-<br>
- 
-```shell
+node dist/lob-routing.js > assets/output-actual.txt
 
-npm install 
-npm run tsc
-node dist/tubi.js
+# to check
 
-``` 
-
+diff assets/output-actual.txt assets/output-expected.txt
