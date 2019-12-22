@@ -7,5 +7,6 @@ const getFactorialOf = (n: number) : number => {
   return n * getFactorialOf(n-1);
 };
 
+console.log(2^3);
 
 console.log(getFactorialOf(4));
