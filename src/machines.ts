@@ -61,15 +61,7 @@ export const dealloc = (v: string) : boolean => {
    return false;
   }
 
-  const s = m.get(k);
-
-  if(!s.has(n)){
-    return false;
-  }
-
-  s.delete(n);
-  return true;
-
+  return m.get(k).delete(n);
 };
 
 
